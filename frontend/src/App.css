@@ -132,6 +132,7 @@
 }
 
 .form {
+  background-color: #44444E;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -143,6 +144,7 @@
   background-color: #393E46;
   border-color: #393E46;
   color: #EEEEEE;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
 }
 
 .btn:hover {
@@ -150,6 +152,12 @@
   border-color: #393E46;
   color: #EEEEEE;
   transform: translateY(-1px);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.input-group {
+  max-width: 25rem;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
 }
 
 .input-group-text {
@@ -158,14 +166,29 @@
   height: 2.5rem;
 }
 
+.eye {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
 .bg-yellow {
   background: linear-gradient(45deg,rgb(124, 116, 87), #FFFD8F);
 }
 
 .bg-red {
-  background: linear-gradient(45deg,#DC143C, #F75270);
+  background: linear-gradient(45deg,#821e1e, #E43636);
 }
 
 .bg-black {
-  background: linear-gradient(45deg,#37353E, #44444E);
+  background: linear-gradient(45deg,#19191e, #44444E);
+}
+
+.text-white-heading {
+  color: #D3DAD9;
+  font-size: xx-large;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+}
+
+.text-danger {
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
 }
