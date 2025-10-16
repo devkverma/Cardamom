@@ -37,6 +37,7 @@ const Crowd = ({isHidden}) => {
           <People
             key={i}
             mousePos={mousePos}
+            isHidden={isHidden} 
             w={i % 3 === 1 ? "width-tall" : "width-normal"}
             bg_color={
               i % 3 === 0 ? "bg-yellow" : i % 3 === 1 ? "bg-black" : "bg-red"

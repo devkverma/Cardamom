@@ -54,7 +54,7 @@ const Login = () => {
   return (
     <>
         <div className="platform shadow rounded">
-          <Crowd/>
+          <Crowd isHidden={hidden} />
           <form className="form shadow">
             <h2 className="text-dark mb-5 mt-5">Login</h2>
             <div className="input-group mb-3">
