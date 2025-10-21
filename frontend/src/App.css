@@ -164,6 +164,13 @@
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
   height: 2.5rem;
+  min-width: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  font-size: large;
 }
 
 .eye {

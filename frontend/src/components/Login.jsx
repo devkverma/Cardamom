@@ -6,7 +6,6 @@ import { AuthContext } from "../AuthProvider";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import Crowd from "./Crowd";
-import Button from "./Button";
 
 const Login = () => {
 
@@ -76,7 +75,12 @@ const Login = () => {
                 </span>
             </div>
             {error && <span className="text-danger">{error}</span>}
-            <button className="btn mt-3" type="submit">Submit</button>
+            { loading ?  (
+                            <button type='submit' className='btn btn-info d-block mx-auto mt-4' disabled><FontAwesomeIcon icon={faSpinner} spin/></button>
+                        ) :
+                        (
+                            <button type='submit' className='btn btn-info d-block mx-auto mt-4'>Login</button>
+                        )}
           </form>
         </div>
     </>
