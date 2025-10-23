@@ -1,0 +1,20 @@
+name: cardamom
+
+services:
+  db:
+    image: postgres
+    container_name: cardamom-postgres
+    ports:
+      - "5432:5432"
+    env_file:
+      - ./.env
+    restart: unless-stopped
+    environment:
+      PGDATA: /var/lib/postgresql/data/pgdata
+      name: pgdata
+    volumes:
+      - cardamom_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  cardamom_postgres_data:
+    name: cardamom_postgres_data
