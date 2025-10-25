@@ -1,19 +1,39 @@
-name: cardamom
+name: cardamom      # project-name
 
 services:
-  db:
-    image: postgres
+  db:               # name-of-service
+    image: postgres       # image you want to pull from docker
     container_name: cardamom-postgres
     ports:
-      - "5432:5432"
+      - "5432:5432"       # port-mapping
+    env_file:
+      - ./.env            # stores sensitive data
+    restart: unless-stopped
+    volumes:
+      - cardamom_postgres_data:/var/lib/postgresql       # helps to restore data even if container is deleted
+
+  backend:
+    container_name: cardamom-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
     env_file:
       - ./.env
-    restart: unless-stopped
-    environment:
-      PGDATA: /var/lib/postgresql/data/pgdata
-      name: pgdata
-    volumes:
-      - cardamom_postgres_data:/var/lib/postgresql/data
+    depends_on:
+      - db
+  frontend:
+    container_name: cardamom-frontend
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    env_file:
+      - ./.env
+    depends_on:
+      - db
 
 volumes:
   cardamom_postgres_data:
